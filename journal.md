@@ -10,5 +10,6 @@
 
 ### 05 Novembre 2020 
 
+- Creazione file index.html
 - Test sull'HeightMap
 - Test sui colori dei cubi alle diverse altezze 
