@@ -19,11 +19,11 @@
 - Capire se fare pochi cubi alti o tanti cubi più corti per il riempimento degli spazi vuoti
 - Ricerca di HeightMap adeguate
 
-### 07 Novembre 2020 
+### 09 Novembre 2020 
 
 - Organizzazione della struttura del progetto: 
     - creazione del file functions.js che contine tutte le funzioni 
-    - aggiunte della cartella './heighmaps/'
+    - aggiunte della cartella `./heighmaps/`
 - Definizione del codice per la creazione del terreno
 - Scelta l'opzione di creare tanti cubi per il "riempimento" invece di fare cubi molto alti (così da gestire meglio le texture)
 - Studio su come alleggerire il progetto perchè ci sono troppi cubi
