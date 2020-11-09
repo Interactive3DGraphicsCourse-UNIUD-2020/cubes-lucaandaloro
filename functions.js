@@ -60,41 +60,16 @@ function creazioneCubo(i, j, posizione, width, height) {
     var cube;
     if (j>=0 && j < 1 ) {
         cube = new THREE.Mesh(cube_geometry, getMateriale("dirt"));
-    } else if(j<2 && posizione<=7){
+    } else if(j<=2 && posizione<=7){
         cube = new THREE.Mesh(cube_geometry, getMateriale("black_water"));
-        
     }else if(j<=5 && posizione<=7) {
         cube = new THREE.Mesh(cube_geometry, getMateriale("water"));
-    }else if(j>6){
+    }else if(j>5){
         cube = new THREE.Mesh(cube_geometry, getMateriale("stone"));
     }else{
         cube = new THREE.Mesh(cube_geometry, getMateriale("grass"));
         
     }
-    /*
-    else {
-        if (posizione < 13) {
-            cube = new THREE.Mesh(cube_geometry, getMateriale("grass"));
-            cube.castShadow = true;
-            cube.receiveShadow = true;
-        } else {
-            if (posizione > 24) {
-                cube = new THREE.Mesh(cube_geometry, getMateriale("sand"));
-                cube.castShadow = true;
-                cube.receiveShadow = true;
-            } else {
-                if (posizione < 20) {
-                    cube = new THREE.Mesh(cube_geometry, getMateriale("dirt"));
-                    cube.castShadow = true;
-                    cube.receiveShadow = true;
-                } else {
-                    cube = new THREE.Mesh(cube_geometry, getMateriale("stone"));
-                    cube.castShadow = true;
-                    cube.receiveShadow = true;
-                }
-            }
-        }
-    }*/
     var x = i % width - width / 2;
     //console.log("x: " + x);
     var y = posizione / 2 + j;
@@ -102,14 +77,6 @@ function creazioneCubo(i, j, posizione, width, height) {
     var z = i / width - height / 2;
     //console.log("z: " + z);
     cube.position.set(x, y, z);
-
-    /*
-    if(posizione != 0){
-        cube.scale.set(1, posizione, 1);
-    }else{ 
-        cube.scale.set(1, 0.1, 1);
-    }
-    */
 
     return cube;
 
@@ -135,14 +102,53 @@ function creazioneTerreno(data, width, height) {
 }
 
 // Carico l'heightmap, chiamo la funzione per calcolare l'altezza e chiamo la funzione per creare il terreno
-function carica(image_src) {
+function terreno(image_src) {
 
     var img = new Image();
     img.onload = function () {
-        var data = getHeightData(img, 0.07);
+        var data = getHeightData(img, 0.06);
         creazioneTerreno(data, img.width, img.height);
     }
     img.src = image_src;
 }
+
+// --------------- FUNZIONE PER LA CREAZIONE DEL PONTE -----------
+
+function ponte(posX, posY, posZ){
+	var ponte = new THREE.Object3D();
+	var pavimento = new THREE.Object3D();
+
+	//pavimento
+	var w = 2;
+	var h = 0.6;
+	var d = 2;
+	var yPrec;
+	for(var i = 0; i < 7; i++){
+			var geometriaPavimento = new THREE.BoxGeometry(w,h,d);
+            var material = new THREE.MeshPhongMaterial({
+                color: ("brown")
+            });
+			var meshPavimento = new THREE.Mesh(geometriaPavimento, material);	
+		if( i <= 3){
+			meshPavimento.position.y += i/2;
+			meshPavimento.position.z += i*1.5;
+			yPrec = meshPavimento.position.y;
+			
+		}else{
+			meshPavimento.position.y = yPrec - 0.5; 
+			meshPavimento.position.z += i*1.5;
+			yPrec = meshPavimento.position.y;
+		}
+		pavimento.add(meshPavimento);
+	}
+	
+	ponte.add(pavimento);
+	ponte.position.set(posX, posY, posZ);
+	scene.add(ponte);
+}
+
+
+
+
 
 // --------------- FUNZIONI PER IL MOVIMENTO DELL'ACQUA -----------
