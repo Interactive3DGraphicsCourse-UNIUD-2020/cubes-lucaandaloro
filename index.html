@@ -45,7 +45,8 @@
 			camera.lookAt( new THREE.Vector3(0,0,0));
 			
 			// Genera tutto il terreno
-            carica("heightmaps/river.png");
+            terreno("heightmaps/river.png");
+            ponte(-3,9,-5);
             
 			hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.6 );
 			hemiLight.color.setHSL( 0.6, 1, 0.6 );
