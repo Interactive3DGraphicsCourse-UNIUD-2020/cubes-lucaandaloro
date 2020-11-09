@@ -10,7 +10,7 @@
 
 ### 05 Novembre 2020 
 
-- Creazione file index.html
+- Creazione file `index.html`
 - Test sull'HeightMap
 
 ### 06 Novembre 2020 
@@ -22,7 +22,7 @@
 ### 09 Novembre 2020 
 
 - Organizzazione della struttura del progetto: 
-    - creazione del file functions.js che contine tutte le funzioni 
+    - creazione del file `functions.js` che contine tutte le funzioni 
     - aggiunte della cartella `./heighmaps/`
 - Definizione del codice per la creazione del terreno
 - Scelta l'opzione di creare tanti cubi per il "riempimento" invece di fare cubi molto alti (così da gestire meglio le texture)
