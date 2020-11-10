@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Starting Code for 1st Project 2017 - with lights and textures</title>
+		<title>River - Luca Andaloro</title>
 		<style>
 		
 		body {
@@ -17,10 +17,13 @@
 	
 	</style>
 		<script src="lib/three.min.js"></script>
+		<script src="lib/BufferGeometryUtils.js"></script>
 		<script src="lib/stats.min.js"></script>
 		<script src="lib/Coordinates.js"></script>
         <script src="lib/OrbitControls.js"></script>
-        <script src="functions.js"></script>
+		<script src="js/terreno1.js"></script>
+		<script src="js/ponte.js"></script>
+		<script src="js/albero.js"></script>
 	</head>
 	<body>
 		
@@ -41,13 +44,17 @@
 			renderer.shadowMap.enabled = true;
 			document.body.appendChild( renderer.domElement );
 			
-			camera.position.set(2,40,2);
+			camera.position.set(9,50,20);
 			camera.lookAt( new THREE.Vector3(0,0,0));
 			
 			// Genera tutto il terreno
-            terreno("heightmaps/river.png");
-            ponte(-3,9,-5);
-            
+
+            terreno("heightmaps/images.jpeg");
+			ponte(-3,9,-5);
+		
+			var pino = creaPino(10,12,7);
+			scene.add(pino);
+			
 			hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.6 );
 			hemiLight.color.setHSL( 0.6, 1, 0.6 );
 			hemiLight.groundColor.setHSL( 0.095, 1, 0.75 );
@@ -92,6 +99,7 @@
 			requestAnimationFrame( Update );
 			controls.update();  
 			stats.update();
+			
 			Render();
 		}
 		
