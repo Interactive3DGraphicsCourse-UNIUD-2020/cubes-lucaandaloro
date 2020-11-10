@@ -29,3 +29,8 @@
 - Scelta l'opzione di creare tanti cubi per il "riempimento" invece di fare cubi molto alti (così da gestire meglio le texture)
 - Prove per aggiungere alcuni elementi decorativi, come: ponte, alberi ecc..
 - Studio su come alleggerire il progetto perchè ci sono troppi cubi ed è molto pesante da caricare/visualizzare
+
+### 10 Novembre 2020 
+
+- Test per alleggeria il peso del progetto
+- Utilizzo della funzione `THREE.BufferGeometryUtils.mergeBufferGeometries` per effettuare un merge di più gerometrie insieme, così favcendo sembra che il progetto sia più leggero e più veloce da aprire
