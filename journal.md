@@ -33,4 +33,16 @@
 ### 10 Novembre 2020 
 
 - Test per alleggeria il peso del progetto
-- Utilizzo della funzione `THREE.BufferGeometryUtils.mergeBufferGeometries` per effettuare un merge di più gerometrie insieme, così favcendo sembra che il progetto sia più leggero e più veloce da aprire
+- Utilizzo della funzione `THREE.BufferGeometryUtils.mergeBufferGeometries` per effettuare un merge di più geometrie insieme, così facendo sembra che il progetto sia più leggero e più veloce da aprire
+- Una volta ottimizzato il caricamento, mi sono dedicato alla decorazione, aggiungendo texture e oggetti
+
+### 11 Novembre 2020 
+
+- Prove di diverse texture per i materiali, erba, terra e roccia
+- Aggiunta delle nuovole con movimento
+- Costruzione di una casa che sarà parte del mulino
+
+### 11 Novembre 2020 
+- Costruzione della ruota del mulino
+- Aggiunta animaziome del mulino
+- Inizio creazione cascata
