@@ -77,5 +77,5 @@ function creaPino(posX, posY, posZ){
     pino.castShadow = true;
     pino.receiveShadow = true;	
     pino.position.set(posX,posY,posZ);
-    return pino;
+    scene.add(pino);
 }
