@@ -54,6 +54,13 @@ function getMateriale(materiale){
                 side: THREE.DoubleSide
             });
             break;
+            case "terrain":
+            var material =  new THREE.MeshPhongMaterial({
+                //map: textureLoader('../textures/terra.jpg'),
+                color: 0x8A6642,
+                side: THREE.DoubleSide
+            });
+            break;
     }
     return material;
 }
