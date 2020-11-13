@@ -164,3 +164,13 @@ function creaParete(w, h, d, rotationZ, rotationY, traslationX, traslationY, tra
 	mesh.position.z += traslationZ; 
 	return mesh;
 }
+
+function animazioneMulino(){
+    for (let i = 0; i < 10; i ++) {
+        palaMeshs[i].rotation.y -= 0.005 ;
+    }
+    for (let i = 0; i < 10; i ++) {
+        paliMeshs[i].rotation.y -= 0.005 ;
+        paliMeshs2[i].rotation.y -= 0.005 ;
+    }
+}
