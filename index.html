@@ -81,20 +81,17 @@
 			stats.domElement.style.top = '0px';
 			document.body.appendChild( stats.domElement );
 			
-			// uncomment if you need to draw coordinate axes when building the scene
-			//Coordinates.drawAllAxes();
 			
 			controls = new THREE.OrbitControls( camera );
 			controls.addEventListener( 'change', Render );
 
 			// Genera tutto il terreno
 
-            terreno("heightmaps/heightmaps.png");
+            creaTerreno("heightmaps/heightmaps.png");
 			//ponte(-3,9,-5);
-			creaPino(10,12,7);
 			creaNuvole();
-			creaMulino(-10,8,-1.5);
-			//creaCascata();
+			creaMulino();
+			creaCascata();
 			creaSole();
 
 			
@@ -105,14 +102,15 @@
 			requestAnimationFrame( Update );
 			controls.update();  
 			stats.update();
-			
 			Render();
+			Animazioni();
+		}
+		function Render(){
+			renderer.render(scene, camera);
 		}
 		
-		function Render() {
-			
-			renderer.render(scene, camera);
-			animazioneMulino();
+		function Animazioni() {
+			//animazioneMulino();
 			//animazioneCascata();
 			
 		}
@@ -121,10 +119,13 @@
 		Update();
 			
 		</script>
-		<div id='controls'>
+		<!--
+<div id='controls'>
             <h3><u>Controls</u></h3>
             <p>Sunlight: <button class="on" onclick="buttonPressHandler(this, 'sunlight')">ON</button></p>
             <p>Bonfire: <button class="off" onclick="buttonPressHandler(this, 'flame')">OFF</button></p>
         </div>
+		-->
+		
 	</body>
 </html>
