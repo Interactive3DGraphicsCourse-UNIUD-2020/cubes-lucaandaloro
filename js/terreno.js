@@ -44,12 +44,14 @@ var black_waters = [ ];
 var grasss = [ ];
 var terrains = [ ];
 var stones = [];
+var contatorePini = 0;
+var distanza = 0;
 
 
 //Crea il corretto cubo in base all'altezza
-function creazioneCubo(i, j, posizione, width, height) {
+function creazioneCubo(i, j, posizione, ultimo, width, height) {
     var geometry = new THREE.BufferGeometry().fromGeometry(new THREE.BoxGeometry(1,1,1));
-  
+    
     if (j>=0 && j < 0.5 ) {
         var sand = geometry.clone();
         sand.applyMatrix(new THREE.Matrix4().makeTranslation(i % width - width / 2,posizione / 2 + j, i / width - height / 2));
@@ -63,9 +65,15 @@ function creazioneCubo(i, j, posizione, width, height) {
         water.applyMatrix(new THREE.Matrix4().makeTranslation(i % width - width / 2,posizione / 2 + j, i / width - height / 2));
         waters.push(water);
     }else if(j>2 && j<=4){
+        distanza++;
         var grass = geometry.clone();
         grass.applyMatrix(new THREE.Matrix4().makeTranslation(i % width - width / 2,posizione / 2 + j, i / width - height / 2));
         grasss.push(grass);
+        if(j>=ultimo-1 && contatorePini<15 && distanza>400){
+            creaPino(i % width - width / 2,posizione / 2 + j+2, i / width - height / 2);
+            contatorePini++;
+            distanza = 0;
+        }
     }else if(j>4 && j<8){
         var terrain = geometry.clone();
         terrain.applyMatrix(new THREE.Matrix4().makeTranslation(i % width - width / 2,posizione / 2 + j, i / width - height / 2));
@@ -81,7 +89,7 @@ function creazioneCubo(i, j, posizione, width, height) {
 function creazioneTerreno(data, width, height) {
     for (var i = 0; i < width*height; i++) {
         for (var j = 0; j < data[i]/2; j++) {
-            creazioneCubo(i, j, data[i], width, height);
+            creazioneCubo(i, j, data[i],data[i]/2, width, height);
         }
     }
     var  sandCubes  =  THREE.BufferGeometryUtils.mergeBufferGeometries(sands);
@@ -94,7 +102,7 @@ function creazioneTerreno(data, width, height) {
     // ora abbiamo 1 mega mesh grande con 10 000 cubi al suo interno
     var meshSand = new THREE.Mesh(sandCubes, getMateriale("sand"));
     var meshBlackWaters = new THREE.Mesh(blackWaterCubes, getMateriale("black_water"));
-    var meshWaters = new THREE.Mesh(watersCubes, getMateriale("water"));
+    meshWaters = new THREE.Mesh(watersCubes, getMateriale("water"));
     var meshGrass = new THREE.Mesh(grassCubes, getMateriale("grass"));
     var meshTerrains = new THREE.Mesh(terrainsCubes, getMateriale("terrain"));
     var meshMontain= new THREE.Mesh(montainCubes, getMateriale("stone"));
