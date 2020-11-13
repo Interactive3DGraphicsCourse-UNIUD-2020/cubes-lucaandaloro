@@ -133,7 +133,9 @@ function creaNuvole(){
     });
 
     var instancedMesh = new THREE.Mesh(instancedGeometry, mat);
+    instancedMesh.receiveShadow = true;
     scene.add(instancedMesh);
+    
     var clock = new THREE.Clock();
     var time = 0;
    
