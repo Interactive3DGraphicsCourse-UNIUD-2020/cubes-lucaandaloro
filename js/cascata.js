@@ -2,58 +2,53 @@
 
 //Crea il corretto cubo in base all'altezza
 function creaCascata() {
-    var geometryCube =new THREE.BoxGeometry(1,1,1);
-    var meshWaters = new THREE.Mesh(geometryCube, getMateriale("water"));
+    
+    var geometryCube = new THREE.BufferGeometry().fromGeometry(new THREE.BoxGeometry(1,1,1));
      cascata =[];
      cascata2 = [];
-     var h = 0;
     var p = true;
     for(var i=0; i<15; i++){
         for(var j = 0; j<5; j++){
             if(i<6){
-                cascata[h] = meshWaters.clone();
-                cascata2[h] = meshWaters.clone();
+                var cuboCascata = geometryCube.clone();
+                var cuboCascata2 = geometryCube.clone();
                 if(p == true){
-                    cascata[h].position.x = -15-(i*0.99);
-                    cascata2[h].position.x = -15-(i*0.89);
+                    cuboCascata.applyMatrix(new THREE.Matrix4().makeTranslation(-15-(i*0.99),17-i, 4+j));
+                    cuboCascata2.applyMatrix(new THREE.Matrix4().makeTranslation(-15-(i*0.89),17-i, 4+j));
                     p = false;
                 }else{
-                    cascata[h].position.x = -15-(i*0.85);
-                    cascata2[h].position.x = -15-(i*0.75);
+                    cuboCascata.applyMatrix(new THREE.Matrix4().makeTranslation(-15-(i*0.85),17-i, 4+j));
+                    cuboCascata2.applyMatrix(new THREE.Matrix4().makeTranslation(-15-(i*0.75),17-i, 4+j));
                     p=true;
                 }
+                cascata.push(cuboCascata);
+                cascata2.push(cuboCascata2);
                 
-                cascata[h].position.y = 18-i;
-                cascata[h].position.z = 4+j;
-                cascata2[h].position.y = 18-i;
-                cascata2[h].position.z = 4+j;
-                scene.add(cascata[h]);
-                scene.add(cascata2[h]);
-                h++;
             }else{
-                cascata[h] = meshWaters.clone();
-                cascata2[h] = meshWaters.clone();
+                var cuboCascata = geometryCube.clone();
+                var cuboCascata2 = geometryCube.clone();
                 if(p == true){
-                    cascata[h].position.x = -15-(i*0.6);
-                    cascata2[h].position.x = -15-(i*0.5);
+                    cuboCascata.applyMatrix(new THREE.Matrix4().makeTranslation(-15-(i*0.6),17-i, 4+j));
+                    cuboCascata2.applyMatrix(new THREE.Matrix4().makeTranslation(-15-(i*0.5),17-i, 4+j));
                     p = false;
                 }else{
-                    cascata[h].position.x = -15-(i*0.65);
-                    cascata2[h].position.x = -15-(i*0.55);
+                    cuboCascata.applyMatrix(new THREE.Matrix4().makeTranslation(-15-(i*0.65),17-i, 4+j));
+                    cuboCascata2.applyMatrix(new THREE.Matrix4().makeTranslation(-15-(i*0.55),17-i, 4+j));
                     p=true;
                 }
+                cascata.push(cuboCascata);
+                cascata2.push(cuboCascata2);
                 
-                cascata[h].position.y = 18-i;
-                cascata[h].position.z = 4+j;
-                cascata2[h].position.y = 18-i;
-                cascata2[h].position.z = 4+j;
-                scene.add(cascata[h]);
-                scene.add(cascata2[h]);
-                h++;
             }
         }
         
     }
+    var  cascataCubes =  THREE.BufferGeometryUtils.mergeBufferGeometries(cascata);
+    var  cascataCubes2 =  THREE.BufferGeometryUtils.mergeBufferGeometries(cascata2);
+    meshCascata = new THREE.Mesh(cascataCubes, getMateriale("water"));
+    meshCascata2 = new THREE.Mesh(cascataCubes2, getMateriale("water"));
+    scene.add(meshCascata);
+    scene.add(meshCascata2);
     
 }
 
