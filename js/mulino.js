@@ -1,34 +1,38 @@
-function creaMulino(posX, posY, posZ){
-	var casa = new THREE.Object3D();
+function creaMulino(){
 	var muri = new THREE.Object3D();
-	var porta = new THREE.Object3D();
-    var tetto = new THREE.Object3D();
     var mulino = new THREE.Object3D();
 	var w = 1;
 	var h = 4;
 	var d = 7;
 
 	//muri
-	muri.add(creaParete(0.5,3,5, 0, 0, 1, 0, 0 ));
-	//facciata con la porta
-	muri.add(creaParete(0.5,3,4.5, 0, 90, 3.5, 0, 2.5));
-	muri.add(creaParete(0.5,3,4.5, 0, 0, 5, 0, 0));
-	muri.add(creaParete(0.5,3,4.5, 0, 90, 3, 0, -2));
+	muri.add(creaParete(0.5,3,5, 0, 0, -9, 8, -1.4 ));
+	muri.add(creaParete(0.5,3,5, 0, 90, -6.3, 8, 0.4));
+	muri.add(creaParete(0.5,3,5, 0, 0, -4, 8, -1.4));
+	muri.add(creaParete(0.5,3,5, 0, 90, -6.3, 8, -3.4));
+    mulino.add(muri);
 
 
+    //tetto
+    
+    var geometria = new THREE.BoxGeometry(0.5,5,5);
+	//var material = new THREE.MeshPhongMaterial({ map: texture });
+	var meshTetto = new THREE.Mesh(geometria, getMateriale("terrain"));
+	meshTetto.rotation.z += 60 * Math.PI/180;
+	//mesh.rotation.y += 45 * Math.PI/180;
+	meshTetto.position.x += -5;
+	meshTetto.position.y += 10;
+    meshTetto.position.z += -1.34; 
+    mulino.add(meshTetto);
+	//var material = new THREE.MeshPhongMaterial({ map: texture });
+	var meshTetto2 = new THREE.Mesh(geometria, getMateriale("terrain"));
+	meshTetto2.rotation.z += -60 * Math.PI/180;
+	//mesh.rotation.y += 45 * Math.PI/180;
+	meshTetto2.position.x += -8;
+	meshTetto2.position.y += 10;
+    meshTetto2.position.z += -1.34; 
+    mulino.add(meshTetto2);
 
-	//tetto
-	for(var i = 4; i > 0; i--){
-		var geometriaTetto = new THREE.BoxGeometry(9,0.5,9);
-		//var materialTetto = new THREE.MeshPhongMaterial({ map: textureTetto });
-		var meshTetto = new THREE.Mesh(geometriaTetto, getMateriale("terrain"));	
-		meshTetto.scale.set(i / 6.5, 0.5,i / 6.5);
-		meshTetto.position.y -= i/4; 
-		tetto.add(meshTetto);
-	}
-	tetto.position.x += 3.2; 
-    tetto.position.y += 2.5;
-    tetto.position.z += 0.2; 
     
     //mulino
     var geometriaPerno = new THREE.CylinderGeometry( 0.3, 0.3, 4, 32 );
@@ -64,8 +68,8 @@ function creaMulino(posX, posY, posZ){
      paliMesh.rotation.x = 90 * Math.PI/180;
      paliMesh.rotation.y = 90 * Math.PI/180;
      paliMesh.position.x += -7.1;
-     paliMesh.position.y += 8.3;
-     paliMesh.position.z += -10;
+     paliMesh.position.y += 7.8;
+     paliMesh.position.z += -9.5;
      let paliCount = 10;
      let rotationStepPali = Math.PI * 2 / paliCount;
      
@@ -75,7 +79,7 @@ function creaMulino(posX, posY, posZ){
         paliMeshs[i] = paliMesh.clone();
         paliMeshs[i].rotation.y = rotationStepPali * i;
         
-         scene.add(paliMeshs[i]);
+         mulino.add(paliMeshs[i]);
          
      }
      //Pali2     
@@ -86,8 +90,8 @@ function creaMulino(posX, posY, posZ){
      paliMesh2.rotation.x = 90 * Math.PI/180;
      paliMesh2.rotation.y = 90 * Math.PI/180;
      paliMesh2.position.x += -7.1;
-     paliMesh2.position.y += 8.3;
-     paliMesh2.position.z += -12;
+     paliMesh2.position.y += 7.8;
+     paliMesh2.position.z += -11.5;
 
      paliMeshs2 = [];
      
@@ -95,7 +99,7 @@ function creaMulino(posX, posY, posZ){
         paliMeshs2[i] = paliMesh2.clone();
         paliMeshs2[i].rotation.y = rotationStepPali * i;
         
-         scene.add(paliMeshs2[i]);
+         mulino.add(paliMeshs2[i]);
          
      }
    
@@ -113,8 +117,8 @@ function creaMulino(posX, posY, posZ){
     palaMesh.rotation.x = 90 * Math.PI/180;
     palaMesh.rotation.y = 90 * Math.PI/180;
     palaMesh.position.x += -7.1;
-    palaMesh.position.y += 8;
-    palaMesh.position.z += -11;
+    palaMesh.position.y += 7.5;
+    palaMesh.position.z += -10.5;
     let palaCount = 10;
     let rotationStep = Math.PI * 2 / palaCount;
     
@@ -123,33 +127,13 @@ function creaMulino(posX, posY, posZ){
     for (let i = 0; i < palaCount; i ++) {
         palaMeshs[i] = palaMesh.clone();
         palaMeshs[i].rotation.y = rotationStep * i;
-       
-        scene.add(palaMeshs[i]);
-        
+        mulino.add(palaMeshs[i]);
     }
     
-
-    mulino.position.set(10, -7.5, 1);
+    //mulino.position.set(10, 10, 1);
+	
+    scene.add(mulino);
     
-
-
-	casa.add(muri);
-	casa.add(porta);
-    casa.add(tetto);
-    casa.add(mulino);
-	casa.position.set(posX, posY, posZ);
-    scene.add(casa);
-    
-    var clock = new THREE.Clock();
-    var time = 0;
-   
-    render();
-
-    function render() {
-    requestAnimationFrame(render);
-    //mulino.rotation.y -= 0.005;
-    
-    }
 }
 
 function creaParete(w, h, d, rotationZ, rotationY, traslationX, traslationY, traslationZ, texture){
@@ -168,8 +152,7 @@ function creaParete(w, h, d, rotationZ, rotationY, traslationX, traslationY, tra
 function animazioneMulino(){
     for (let i = 0; i < 10; i ++) {
         palaMeshs[i].rotation.y -= 0.005 ;
-    }
-    for (let i = 0; i < 10; i ++) {
+    
         paliMeshs[i].rotation.y -= 0.005 ;
         paliMeshs2[i].rotation.y -= 0.005 ;
     }
