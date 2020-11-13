@@ -28,9 +28,9 @@
 		<script src="js/nuvole.js"></script>
 		<script src="js/mulino.js"></script>
 		<script src="js/cascata.js"></script>
+		<script src="js/sole.js"></script>
 	</head>
 	<body>
-		
 		<script>
 		
 		var scene, camera, renderer, controls, stats;
@@ -48,7 +48,7 @@
 			renderer.shadowMap.enabled = true;
 			document.body.appendChild( renderer.domElement );
 			
-			camera.position.set(0,40,9);
+			camera.position.set(-50, 50, -20 );
 			camera.lookAt( new THREE.Vector3(0,0,0));
 			
 			hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.6 );
@@ -59,15 +59,15 @@
 
 			dirLight = new THREE.DirectionalLight( 0xffffff, 1 );
 			dirLight.color.setHSL( 0.1, 1, 0.95 );
-			dirLight.position.set( -1, 1.75, 1 );
+			dirLight.position.set(10, 100, 30 );
 			dirLight.position.multiplyScalar( 50 );
 			scene.add( dirLight );
 			dirLight.castShadow = true;
-			dirLight.shadow.mapSize.width = 1024;
-			dirLight.shadow.mapSize.height = 1024;
+			dirLight.shadow.mapSize.width = 128;
+			dirLight.shadow.mapSize.height = 128;
 
 			// GROUND
-			var groundGeo = new THREE.PlaneBufferGeometry( 10000, 10000 );
+			var groundGeo = new THREE.PlaneBufferGeometry( 200, 200 );
 			var groundMat = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x050505 } );
 			groundMat.color.setHSL( 0.095, 1, 0.75 );
 			var ground = new THREE.Mesh( groundGeo, groundMat );
@@ -94,7 +94,9 @@
 			creaPino(10,12,7);
 			creaNuvole();
 			creaMulino(-10,8,-1.5);
-			creaCascata();
+			//creaCascata();
+			creaSole();
+
 			
 			
 		}
@@ -110,18 +112,19 @@
 		function Render() {
 			
 			renderer.render(scene, camera);
-			for (let i = 0; i < 10; i ++) {
-				palaMeshs[i].rotation.y -= 0.005 ;
-			}
-			for (let i = 0; i < 10; i ++) {
-				paliMeshs[i].rotation.y -= 0.005 ;
-				paliMeshs2[i].rotation.y -= 0.005 ;
-    		}
+			animazioneMulino();
+			//animazioneCascata();
+			
 		}
 		
 		Start();
 		Update();
 			
 		</script>
+		<div id='controls'>
+            <h3><u>Controls</u></h3>
+            <p>Sunlight: <button class="on" onclick="buttonPressHandler(this, 'sunlight')">ON</button></p>
+            <p>Bonfire: <button class="off" onclick="buttonPressHandler(this, 'flame')">OFF</button></p>
+        </div>
 	</body>
 </html>
