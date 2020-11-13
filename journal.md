@@ -49,5 +49,6 @@
 
 ### 13 Novembre 2020 
 - Studio animazione cascata
-- Test per il posizionamento automatico dei pini (numero max, e distanzae solo sull'erba)
+- Test per il posizionamento automatico dei pini, tenendo conto di: numero max, distanza e creazione solo sull'erba
 - Test per l'aggiunta di bottoni che serviranno per dirversi scopi
+- Per alleggerire la pagina effettuo la stessa operazione di merge fatta sul terreno anche sulla cascata
