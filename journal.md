@@ -46,3 +46,8 @@
 - Costruzione della ruota del mulino
 - Aggiunta animaziome del mulino
 - Inizio creazione cascata
+
+### 13 Novembre 2020 
+- Studio animazione cascata
+- Test per il posizionamento automatico dei pini (numero max, e distanzae solo sull'erba)
+- Test per l'aggiunta di bottoni che serviranno per dirversi scopi
