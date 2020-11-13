@@ -117,7 +117,7 @@ function creazioneTerreno(data, width, height) {
 }
 
 // Carico l'heightmap, chiamo la funzione per calcolare l'altezza e chiamo la funzione per creare il terreno
-function terreno(image_src) {
+function creaTerreno(image_src) {
 
     var img = new Image();
     img.onload = function () {
