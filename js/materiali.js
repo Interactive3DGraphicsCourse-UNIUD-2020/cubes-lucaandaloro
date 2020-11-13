@@ -61,6 +61,14 @@ function getMateriale(materiale){
                 side: THREE.DoubleSide
             });
             break;
+            case "sole":
+            var material =  new THREE.MeshPhongMaterial({
+                map: textureLoader('../textures/test_sole.png'),
+                color: "yellow",
+                side: THREE.DoubleSide,
+                shininess: 100
+            });
+            break;
     }
     return material;
 }
