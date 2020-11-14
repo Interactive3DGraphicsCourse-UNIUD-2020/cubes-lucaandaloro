@@ -48,7 +48,7 @@ var contatorePini = 0;
 var distanza = 0;
 
 
-//Crea il corretto cubo in base all'altezza
+//Crea il corretto cubo in base all'altezza e viene inserito con l'array corrispondende
 function creazioneCubo(i, j, posizione, ultimo, width, height) {
     var geometry = new THREE.BufferGeometry().fromGeometry(new THREE.BoxGeometry(1,1,1));
     
