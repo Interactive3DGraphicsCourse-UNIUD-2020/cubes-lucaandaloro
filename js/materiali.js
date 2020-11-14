@@ -69,6 +69,20 @@ function getMateriale(materiale){
                 shininess: 100
             });
             break;
+            case "mulino":
+            var material =  new THREE.MeshPhongMaterial({
+                map: textureLoader('../textures/wood.jpg'),
+                side: THREE.DoubleSide,
+                
+            });
+            break;
+            case "mulinoPali":
+            var material =  new THREE.MeshPhongMaterial({
+                map: textureLoader('../textures/wood2.jpg'),
+                side: THREE.DoubleSide,
+                
+            });
+            break;
     }
     return material;
 }
