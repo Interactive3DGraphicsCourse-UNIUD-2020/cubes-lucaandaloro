@@ -52,3 +52,14 @@
 - Test per il posizionamento automatico dei pini, tenendo conto di: numero max, distanza e creazione solo sull'erba
 - Test per l'aggiunta di bottoni che serviranno per dirversi scopi
 - Per alleggerire la pagina effettuo la stessa operazione di merge fatta sul terreno anche sulla cascata
+
+### 14 Novembre 2020 
+- Aggiunta di pini/alberi in modo automatico durante la generazione del terreno
+- Perfezionamento della strttura della cascata
+- Test per l'animazione della cascata
+- Aggiunta di texture per il mulino, sia la casa che la ruota con due tipi di legno
+- Alcune prove per aggiungere dettagli extra, tra cui:
+    - Test per aggiungere il sole (ma non convince la forma)
+    - Test per aggiungere una grotta all'inzio della cascata
+    - Test per aggungere schiuma alla fine della cascata
+    - Test per migliorare l'effetto "profondità" del fiume
