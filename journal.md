@@ -42,7 +42,7 @@
 - Aggiunta delle nuovole con movimento
 - Costruzione di una casa che sarà parte del mulino
 
-### 11 Novembre 2020 
+### 12 Novembre 2020 
 - Costruzione della ruota del mulino
 - Aggiunta animaziome del mulino
 - Inizio creazione cascata
@@ -60,6 +60,6 @@
 - Aggiunta di texture per il mulino, sia la casa che la ruota con due tipi di legno
 - Alcune prove per aggiungere dettagli extra, tra cui:
     - Test per aggiungere il sole (ma non convince la forma)
-    - Test per aggiungere una grotta all'inzio della cascata
+    - Test per aggiungere una grotta all'inizio della cascata
     - Test per aggungere schiuma alla fine della cascata
     - Test per migliorare l'effetto "profondità" del fiume
