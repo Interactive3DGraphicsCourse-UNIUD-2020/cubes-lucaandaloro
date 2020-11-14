@@ -17,7 +17,7 @@ function creaMulino(){
     
     var geometria = new THREE.BoxGeometry(0.5,5,5);
 	//var material = new THREE.MeshPhongMaterial({ map: texture });
-	var meshTetto = new THREE.Mesh(geometria, getMateriale("terrain"));
+	var meshTetto = new THREE.Mesh(geometria, getMateriale("mulino"));
 	meshTetto.rotation.z += 60 * Math.PI/180;
 	//mesh.rotation.y += 45 * Math.PI/180;
 	meshTetto.position.x += -5;
@@ -25,7 +25,7 @@ function creaMulino(){
     meshTetto.position.z += -1.34; 
     mulino.add(meshTetto);
 	//var material = new THREE.MeshPhongMaterial({ map: texture });
-	var meshTetto2 = new THREE.Mesh(geometria, getMateriale("terrain"));
+	var meshTetto2 = new THREE.Mesh(geometria, getMateriale("mulino"));
 	meshTetto2.rotation.z += -60 * Math.PI/180;
 	//mesh.rotation.y += 45 * Math.PI/180;
 	meshTetto2.position.x += -8;
@@ -43,8 +43,8 @@ function creaMulino(){
     meshPerno.position.z += -4.5;
     mulino.add(meshPerno);
     var geometry = new THREE.TorusGeometry( 3, 0.25, 6, 100 );
-    var torus = new THREE.Mesh(geometry, getMateriale("terrain") );
-    var torus2 = new THREE.Mesh(geometry, getMateriale("terrain"));
+    var torus = new THREE.Mesh(geometry, getMateriale("mulinoPali") );
+    var torus2 = new THREE.Mesh(geometry, getMateriale("mulinoPali"));
     torus.position.x += -7.1;
     torus.position.y += 7.5;
     torus.position.z += -4.5;
@@ -57,14 +57,12 @@ function creaMulino(){
      //Pali1
             
      var paliGeom = new THREE.BoxGeometry(5.5,0.2,0.2);
-     var material = new THREE.MeshBasicMaterial( {color:  new THREE.Color( 'orange' )} );
- 
      let radiusr = 3;
     
      // Cambio il pivot così da generare la pala intorno
      paliGeom.translate(0, 0, -5);
      paliGeom.rotateX(Math.PI / 2);
-     let paliMesh = new THREE.Mesh(paliGeom, material);
+     let paliMesh = new THREE.Mesh(paliGeom, getMateriale("mulinoPali"));
      paliMesh.rotation.x = 90 * Math.PI/180;
      paliMesh.rotation.y = 90 * Math.PI/180;
      paliMesh.position.x += -7.1;
@@ -86,7 +84,7 @@ function creaMulino(){
 
     
      
-     let paliMesh2 = new THREE.Mesh(paliGeom, material);
+     let paliMesh2 = new THREE.Mesh(paliGeom, getMateriale("mulinoPali"));
      paliMesh2.rotation.x = 90 * Math.PI/180;
      paliMesh2.rotation.y = 90 * Math.PI/180;
      paliMesh2.position.x += -7.1;
@@ -106,14 +104,12 @@ function creaMulino(){
     //Pale
             
     var palaGeom = new THREE.BoxGeometry(0.7,0.2,1.7);
-    var material = new THREE.MeshBasicMaterial( {color:  new THREE.Color( 'orange' )} );
-
     let radius = 3;
    
     // Cambio il pivot così da generare la pala intorno
     palaGeom.translate(0, -radius, -5);
     palaGeom.rotateX(Math.PI / 2);
-    let palaMesh = new THREE.Mesh(palaGeom, material);
+    let palaMesh = new THREE.Mesh(palaGeom, getMateriale("mulino"));
     palaMesh.rotation.x = 90 * Math.PI/180;
     palaMesh.rotation.y = 90 * Math.PI/180;
     palaMesh.position.x += -7.1;
@@ -140,7 +136,7 @@ function creaParete(w, h, d, rotationZ, rotationY, traslationX, traslationY, tra
 
 	var geometria = new THREE.BoxGeometry(w,h,d);
 	//var material = new THREE.MeshPhongMaterial({ map: texture });
-	var mesh = new THREE.Mesh(geometria, getMateriale("terrain"));
+	var mesh = new THREE.Mesh(geometria, getMateriale("mulino"));
 	mesh.rotation.z += rotationZ * Math.PI/180;
 	mesh.rotation.y += rotationY * Math.PI/180;
 	mesh.position.x += traslationX;
@@ -152,7 +148,6 @@ function creaParete(w, h, d, rotationZ, rotationY, traslationX, traslationY, tra
 function animazioneMulino(){
     for (let i = 0; i < 10; i ++) {
         palaMeshs[i].rotation.y -= 0.005 ;
-    
         paliMeshs[i].rotation.y -= 0.005 ;
         paliMeshs2[i].rotation.y -= 0.005 ;
     }
