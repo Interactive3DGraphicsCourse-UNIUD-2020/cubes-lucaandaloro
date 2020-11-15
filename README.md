@@ -18,7 +18,7 @@ Inizialmente è stato costruito il terreno con una heightmap (spiegherò nel det
 ![Immagine cascata](immagini/ponte.png)
 - Alberi: Compositi da un tronco e box sovrapposti per simulare l'aspetto di un pino.<br />
 ![Immagine cascata](immagini/albero.png)
-- Nuvole: Sono state ideate da essere tutte diverse tra loro, composte da diversi cubi.<br />
+- Nuvole: Sono state ideate per essere tutte diverse tra loro, composte da diversi cubi.<br />
 ![Immagine cascata](immagini/nuvole.png)
 
 ## Terreno:
