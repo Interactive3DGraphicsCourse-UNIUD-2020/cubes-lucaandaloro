@@ -25,7 +25,7 @@
 		<script src="js/terreno.js"></script>
 		<script src="js/ponte.js"></script>
 		<script src="js/albero.js"></script>
-		<script src="js/nuvole.js"></script>
+		<script src="js/nuvole2.js"></script>
 		<script src="js/mulino.js"></script>
 		<script src="js/cascata.js"></script>
 		<script src="js/sole.js"></script>
@@ -48,7 +48,7 @@
 			renderer.shadowMap.enabled = true;
 			document.body.appendChild( renderer.domElement );
 			
-			camera.position.set(-50, 50, -20 );
+			camera.position.set(40, 50, -30 );
 			camera.lookAt( new THREE.Vector3(0,0,0));
 			
 			hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.6 );
@@ -68,7 +68,7 @@
 
 
 			// GROUND
-			var groundGeo = new THREE.PlaneBufferGeometry( 200, 200 );
+			var groundGeo = new THREE.PlaneBufferGeometry( 1000, 1000 );
 			var groundMat = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x050505 } );
 			groundMat.color.setHSL( 0.095, 1, 0.75 );
 			var ground = new THREE.Mesh( groundGeo, groundMat );
@@ -92,7 +92,7 @@
 			creaNuvole();
 			creaMulino();
 			creaCascata();
-			//creaSole();
+			
 	
 			
 		}
@@ -111,7 +111,7 @@
 		
 		function Animazioni() {
 			animazioneMulino();
-			animazioneNuovole();
+			animazioneNuvole();
 		}
 		
 		
