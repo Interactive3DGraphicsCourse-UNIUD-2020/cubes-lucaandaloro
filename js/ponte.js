@@ -4,12 +4,11 @@ function creaPonte(){
 	var ponte = new THREE.Object3D();
 
 	//pavimento
-	var x = 15;
+	var x = -3;
 	var y = 7;
-	var z = -8;
-	var yPrec;
-	var geometriaPavimento = new THREE.BoxGeometry(3,0.6,2);
-	var meshPavimento = new THREE.Mesh(geometriaPavimento, getMateriale("mulino"));	
+	var z = 28;
+	var geometriaBlocco = new THREE.BoxGeometry(3,0.6,2);
+	var meshPavimento = new THREE.Mesh(geometriaBlocco, getMateriale("mulino"));	
 	for(var i = 0; i < 12; i++){
 		var salita = meshPavimento.clone();
 		if(i<2){
@@ -33,5 +32,6 @@ function creaPonte(){
 		}
 		ponte.add(salita);
 	}
+	ponte.rotation.y = 50 * Math.PI/180;
 	scene.add(ponte);
 }
