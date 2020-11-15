@@ -10,7 +10,7 @@
 L'intero progetto si basa, come da consegna, nel costruire una scena esclusivamente composta da cubi. 
 L'idea è stata quella di creare un ambiente naturale composto da montagne, fiume, vegetazione e una cascata.
 Inizialmente è stato costruito il terreno con una heightmap (spiegherò nel dettagli nela sezione "terreno"), ed sono stati aggiunti diversi elementi tra cui: 
-- Mulino:
+- Mulino: (immagini/mulino.png)
 - Cascata:
 - Ponte: 
 - Alberi:
@@ -47,17 +47,6 @@ E' stato preso in considerazione anche la possbilità di eliminare le facce dei 
 * **`./textures`** -> Contiene tutte le texture utilizzate nel progetto
 * **`./heightmaps`** -> Contiene la heightmap utilizzata per generare il terreno
 
-
-
-## Performance and browser compatibility
-The scene displays correctly on Firefox (80), Safari (13.0.5), and Chrome (85), with the last one being the worst performing.
-The framerate goes from 19 to 35 fps (depending on the zoom level) on a laptop with integrated graphics (Intel HD Graphics 630).
-Memory usage is pretty low on all tested environments (~40-50Mb).
-
-The most performance taxing element of the scene seems to be shadows.
-To make the scene perform adequately on integrated graphics some tweaking was done to optimize shadow cameras position, resolution and frustum size; however, to avoid severe shadow acne and peter-panning effects, I had to set the shadowmap's size to 4k on the directional light simulating the sun/moon and to 2k on the flame's point light.
-
-Other possible optimizations include rewriting the vegetation classes to use instanced meshes. Loading the terrain without vegetation, however, does not seem to offer a noticeable enough performance boost.
 
 ## Strumenti Utilizzati
 - **Software**
