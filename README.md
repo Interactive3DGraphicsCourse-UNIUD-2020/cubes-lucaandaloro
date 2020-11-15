@@ -10,8 +10,8 @@
 L'intero progetto si basa, come da consegna, nel costruire una scena esclusivamente composta da cubi. 
 L'idea è stata quella di creare un ambiente naturale composto da montagne, fiume, vegetazione e una cascata.
 Inizialmente è stato costruito il terreno con una heightmap (spiegherò nel dettagli nela sezione "terreno"), ed sono stati aggiunti diversi elementi tra cui: 
-- Mulino: La casa è stata costruita tramite parallelepipedi. La ruota che compone il mulino è stata creata cambiando il pivot gli elementi che la compongono così da farli posizionare intorno al perno centrale.
-- ![Immagini Mulino](immagini/mulino.png)
+- Mulino: La casa è stata costruita tramite parallelepipedi. La ruota che compone il mulino è stata creata cambiando il pivot gli elementi che la compongono così da farli posizionare intorno al perno centrale.<br />
+![Immagini Mulino](immagini/mulino.png)
 - Cascata: E' composta da due file di cubi per creare un senso di profondità, sono stati posizionati in modo non allineato così da creare il disordine dell'acqua.
 - Ponte: E' composto da parallelepipedi con angolazioni diverse così da formare un arco.
 - Alberi: Compositi da un tronco e box sovrapposti per simulare l'aspetto di un pino.
@@ -19,14 +19,14 @@ Inizialmente è stato costruito il terreno con una heightmap (spiegherò nel det
 
 ## Terreno:
 
-Il terreno è stato generato tramite la seguente Heightmaps:
-![Heightmap](heightmaps/heightmaps.png)
-inizialmente è stata ritoccata con photoshop per aggiustare la tonalità in alcuni parti (es. la zona dove è stat posizionato il mulino).
+Il terreno è stato generato tramite la seguente Heightmaps:<br />
+![Heightmap](heightmaps/heightmaps.png) <br />
+La foto è stata ritoccata con photoshop per aggiustare la tonalità in alcuni parti (es. la zona dove è stat posizionato il mulino).
 Nelle prima fasi si sono prese in considerazioni diverse opzioni per il posizionamento dei cubi in particolare: 
 1. Mantenere una solo fila di cubi (PROBLEMA: con dislivelli ampi si creavano troppi spazi vuoti);
 2. Creare cubi allungati (Funzionale non bello esteticamente)
-3. Posizionare tanti cubi sovrapposti (PROBLEMA: Il progetto risultava molto pesante e lento, vedere: [Ottimizzazione] (https://github.com/Interactive3DGraphicsCourse-UNIUD-2020/cubes-lucaandaloro/tree/sviluppo#ottimizzazione))
- E' stata scelta la terza opzione perchè (come già detto) esteticamente la migliore per gestire diversi strati di materiale. In fine è stato studiato un modo per assegnare in base all'altezza e alla posizione il materiale al singolo cubetto.
+3. Posizionare tanti cubi sovrapposti (PROBLEMA: Il progetto risultava molto pesante e lento, vedere: [Ottimizzazione](https://github.com/Interactive3DGraphicsCourse-UNIUD-2020/cubes-lucaandaloro/tree/sviluppo#ottimizzazione) ).
+E' stata scelta la terza opzione perchè (come già detto) esteticamente la migliore per gestire diversi strati di materiale. In fine è stato studiato un modo per assegnare in base all'altezza e alla posizione il materiale al singolo cubetto.
 
 
 ## Ottimizzazione:
