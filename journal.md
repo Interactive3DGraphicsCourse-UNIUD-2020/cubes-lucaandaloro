@@ -63,3 +63,9 @@
     - Test per aggiungere una grotta all'inizio della cascata
     - Test per aggungere schiuma alla fine della cascata
     - Test per migliorare l'effetto "profondità" del fiume
+
+### 14 Novembre 2020 
+- Miglioramente genrale del codice
+- Aggiunta commenti nel codice
+- Perfezionamento delle luci
+- Creazione file `readme.md`
