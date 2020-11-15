@@ -75,12 +75,3 @@ function creaCascata() {
     //scene.add(meshGrotta);
     
 }
-
-function animazioneCascata(){
-    x=18;
-    for (var i = 0; i < 15*5; i ++) {
-        cascata[i].rotation.z += 0.001 ;
-        cascata2[i].rotation.z += 0.0002 ;
-    }
-
-}
