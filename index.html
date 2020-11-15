@@ -33,7 +33,7 @@
 	<body>
 		<script>
 		
-		var scene, camera, renderer, controls, stats;
+		var scene, camera, renderer, controls, stats, sole;
 		
 		function Start() {
 			scene = new THREE.Scene();
@@ -59,12 +59,13 @@
 
 			dirLight = new THREE.DirectionalLight( 0xffffff, 1 );
 			dirLight.color.setHSL( 0.1, 1, 0.95 );
-			dirLight.position.set(10, 100, 30 );
+			dirLight.position.set(0, 20, 0);
 			dirLight.position.multiplyScalar( 50 );
 			scene.add( dirLight );
 			dirLight.castShadow = true;
 			dirLight.shadow.mapSize.width = 128;
 			dirLight.shadow.mapSize.height = 128;
+
 
 			// GROUND
 			var groundGeo = new THREE.PlaneBufferGeometry( 200, 200 );
@@ -85,7 +86,6 @@
 			controls = new THREE.OrbitControls( camera );
 			controls.addEventListener( 'change', Render );
 
-			// Genera tutto il terreno
 
             creaTerreno("heightmaps/heightmaps.png");
 			//ponte(-3,9,-5);
@@ -93,8 +93,7 @@
 			creaMulino();
 			creaCascata();
 			//creaSole();
-
-			
+	
 			
 		}
 		
@@ -102,8 +101,9 @@
 			requestAnimationFrame( Update );
 			controls.update();  
 			stats.update();
-			Render();
 			Animazioni();
+			Render();
+			
 		}
 		function Render(){
 			renderer.render(scene, camera);
@@ -111,22 +111,12 @@
 		
 		function Animazioni() {
 			animazioneMulino();
-			//animazioneCascata();
-			
-			
+			animazioneNuovole();
 		}
 		
 		Start();
 		Update();
 			
 		</script>
-		<!--
-<div id='controls'>
-            <h3><u>Controls</u></h3>
-            <p>Sunlight: <button class="on" onclick="buttonPressHandler(this, 'sunlight')">ON</button></p>
-            <p>Bonfire: <button class="off" onclick="buttonPressHandler(this, 'flame')">OFF</button></p>
-        </div>
-		-->
-		
 	</body>
 </html>
