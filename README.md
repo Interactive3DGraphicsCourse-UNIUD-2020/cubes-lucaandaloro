@@ -1,6 +1,6 @@
-# Cubes - 3Dint First Project
+# Fiume . Primo progetto di Intractive 3D Graphics
 
-![A small preview](immagini/showcase.gif)
+![A small preview](immagini/video.mov)
 
 ### Studente:
 - Luca Andaloro - 151316
