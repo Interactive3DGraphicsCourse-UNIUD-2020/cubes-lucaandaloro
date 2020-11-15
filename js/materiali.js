@@ -2,7 +2,6 @@ function getMateriale(materiale){
     switch(materiale){
         case "water":
             var material =  new THREE.MeshPhongMaterial({
-                //map: textureLoader('../texture/water.png')
                 color: 0x0892d0,
                 shininess: 64,
                 specular: new THREE.Color(0.31,0.31,0.31),
@@ -15,7 +14,6 @@ function getMateriale(materiale){
             break;
         case "black_water":
             var material =  new THREE.MeshPhongMaterial({
-                //map: textureLoader('../texture/water.png')
                 color: 0x183b57,
                 shininess: 64,
                 specular: new THREE.Color(0.31,0.31,0.31),
@@ -40,23 +38,14 @@ function getMateriale(materiale){
                 side: THREE.DoubleSide
             });
             break;
-        case "dirt":
-            var material= new THREE.MeshPhongMaterial({
-                //map: textureLoader('../texture/dirt.png'),
-                color: 0x60571e,
-                side: THREE.DoubleSide
-            });
-            break;
         case "stone":
             var material =  new THREE.MeshPhongMaterial({
-                //map: textureLoader('../texture/stone.png'),
                 color: "grey",
                 side: THREE.DoubleSide
             });
             break;
             case "terrain":
             var material =  new THREE.MeshPhongMaterial({
-                //map: textureLoader('../textures/terra.jpg'),
                 color: 0x8A6642,
                 side: THREE.DoubleSide
             });
