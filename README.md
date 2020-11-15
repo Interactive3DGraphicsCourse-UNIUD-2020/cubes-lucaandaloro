@@ -43,7 +43,7 @@ E' stato preso in considerazione anche la possbilità di eliminare le facce dei 
   * `./js/albero.js` -> Contiene la struttura dell'albero che poi viene richiamato da `./js/terreno.js` 
   * `./js/materiali.js` -> Contiene tutti i materiali di tutto il pregetto che vengono richiesti tramite la funzione `getMateriale()`
   * `./js/nuvole.js` -> Genera le nuvole
-    - `./js/test` -> Questa cartella contiene aluni file di test o di alcune soluzioni alternative per alcuni elementi
+    * `./js/test` -> Questa cartella contiene file di test o soluzioni alternative per alcuni elementi
 * **`./textures`** -> Contiene tutte le texture utilizzate nel progetto
 * **`./heightmaps`** -> Contiene la heightmap utilizzata per generare il terreno
 
