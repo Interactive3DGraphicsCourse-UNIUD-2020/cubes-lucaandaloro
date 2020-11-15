@@ -72,6 +72,13 @@ function getMateriale(materiale){
                 
             });
             break;
+            case "nuvola":
+            var material =  new THREE.MeshPhongMaterial({
+                color: "white",
+                side: THREE.DoubleSide,
+                
+            });
+            break;
     }
     return material;
 }

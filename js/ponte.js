@@ -29,6 +29,8 @@ function creaPonte(){
 		}else if(i>10){
 			salita.position.set(x,y+(i/15),z-(i/1.2));
 			salita.rotation.x = -40 * Math.PI/180;
+		}else{
+			salita = null;
 		}
 		ponte.add(salita);
 	}
