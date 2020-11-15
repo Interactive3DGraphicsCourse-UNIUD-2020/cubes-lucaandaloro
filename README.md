@@ -1,6 +1,6 @@
 # Cubes - 3Dint First Project
 
-![A small preview](photos/showcase.gif)
+![A small preview](immagini/showcase.gif)
 
 ### Studente:
 - Luca Andaloro - 151316
@@ -10,7 +10,7 @@
 L'intero progetto si basa, come da consegna, nel costruire una scena esclusivamente composta da cubi. 
 L'idea è stata quella di creare un ambiente naturale composto da montagne, fiume, vegetazione e una cascata.
 Inizialmente è stato costruito il terreno con una heightmap (spiegherò nel dettagli nela sezione "terreno"), ed sono stati aggiunti diversi elementi tra cui: 
-- Mulino: (immagini/mulino.png)
+- Mulino: ![Immagini Mulino](immagini/mulino.png)
 - Cascata:
 - Ponte: 
 - Alberi:
