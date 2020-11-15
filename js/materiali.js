@@ -79,6 +79,20 @@ function getMateriale(materiale){
                 
             });
             break;
+            case "tronco":
+            var material =  new THREE.MeshPhongMaterial({
+                color: 'rgb(87,64,39)',
+                side: THREE.DoubleSide,
+                
+            });
+            break;
+            case "foglie":
+                var material =  new THREE.MeshPhongMaterial({
+                    color: 'rgb(45,80,40)',
+                    side: THREE.DoubleSide,
+                    
+                });
+                break;
     }
     return material;
 }
