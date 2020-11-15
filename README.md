@@ -1,6 +1,6 @@
-# Fiume . Primo progetto di Intractive 3D Graphics
+# Fiume - Primo progetto di Interactive 3D Graphics
 
-![A small preview](immagini/video.gif)
+![Anteprima](immagini/video.gif)
 
 ### Studente:
 - Luca Andaloro - 151316
@@ -12,10 +12,14 @@ L'idea è stata quella di creare un ambiente naturale composto da montagne, fium
 Inizialmente è stato costruito il terreno con una heightmap (spiegherò nel dettagli nela sezione "terreno"), ed sono stati aggiunti diversi elementi tra cui: 
 - Mulino: La casa è stata costruita tramite parallelepipedi. La ruota che compone il mulino è stata creata cambiando il pivot gli elementi che la compongono così da farli posizionare intorno al perno centrale.<br />
 ![Immagini Mulino](immagini/mulino.png)
-- Cascata: E' composta da due file di cubi per creare un senso di profondità, sono stati posizionati in modo non allineato così da creare il disordine dell'acqua.
-- Ponte: E' composto da parallelepipedi con angolazioni diverse così da formare un arco.
-- Alberi: Compositi da un tronco e box sovrapposti per simulare l'aspetto di un pino.
-- Nuvole: Sono state ideate da essere tutte diverse tra loro, composte da diversi cubi.
+- Cascata: E' composta da due file di cubi per creare un senso di profondità, sono stati posizionati in modo non allineato così da creare il disordine dell'acqua.<br />
+![Immagine cascata](immagini/cascata.png)
+- Ponte: E' composto da parallelepipedi con angolazioni diverse così da formare un arco.<br />
+![Immagine cascata](immagini/ponte.png)
+- Alberi: Compositi da un tronco e box sovrapposti per simulare l'aspetto di un pino.<br />
+![Immagine cascata](immagini/albero.png)
+- Nuvole: Sono state ideate da essere tutte diverse tra loro, composte da diversi cubi.<br />
+![Immagine cascata](immagini/nuvole.png)
 
 ## Terreno:
 
