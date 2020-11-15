@@ -64,7 +64,7 @@
     - Test per aggungere schiuma alla fine della cascata
     - Test per migliorare l'effetto "profondità" del fiume
 
-### 14 Novembre 2020 
+### 15 Novembre 2020 
 - Miglioramente genrale del codice
 - Aggiunta commenti nel codice
 - Perfezionamento delle luci
