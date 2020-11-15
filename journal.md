@@ -39,7 +39,7 @@
 ### 11 Novembre 2020 
 
 - Prove di diverse texture per i materiali, erba, terra e roccia
-- Aggiunta delle nuovole con movimento
+- Aggiunta delle nuvole con movimento
 - Costruzione di una casa che sarà parte del mulino
 
 ### 12 Novembre 2020 
@@ -65,7 +65,8 @@
     - Test per migliorare l'effetto "profondità" del fiume
 
 ### 15 Novembre 2020 
-- Miglioramente genrale del codice
+- Miglioramente generale del codice
+- Correziona strttura del codice
 - Aggiunta commenti nel codice
 - Perfezionamento delle luci
 - Creazione file `readme.md`
