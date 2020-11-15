@@ -132,9 +132,9 @@ function creaNuvole(){
     fragmentShader: boxFrag
     });
 
-    var instancedMesh = new THREE.Mesh(instancedGeometry, mat);
-    instancedMesh.receiveShadow = true;
-    scene.add(instancedMesh);
+    var nuvoleMesh = new THREE.Mesh(instancedGeometry, mat);
+    nuvoleMesh.receiveShadow = true;
+    scene.add(nuvoleMesh);
    
    
 }
