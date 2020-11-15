@@ -1,6 +1,6 @@
 # Fiume . Primo progetto di Intractive 3D Graphics
 
-![A small preview](immagini/video.mov)
+![A small preview](immagini/video.gif)
 
 ### Studente:
 - Luca Andaloro - 151316
