@@ -119,7 +119,7 @@ function creaNuvole(){
     instancedGeometry.addAttribute('instancePosition', new THREE.InstancedBufferAttribute(new Float32Array(positions), 3));
 
 
-    var mat = new THREE.ShaderMaterial({
+     mat = new THREE.ShaderMaterial({
     uniforms: {
         time: {
         value: 0
@@ -135,19 +135,15 @@ function creaNuvole(){
     var instancedMesh = new THREE.Mesh(instancedGeometry, mat);
     instancedMesh.receiveShadow = true;
     scene.add(instancedMesh);
-    
-    var clock = new THREE.Clock();
-    var time = 0;
    
-    render();
+   
+}
+ 
+var clock = new THREE.Clock();
+var time = 0;
 
-    function render() {
-    requestAnimationFrame(render);
-    time += clock.getDelta();
-    mat.uniforms.time.value = time;
-    
-    }
-
-
+function animazioneNuovole() {
+  time += clock.getDelta();
+  mat.uniforms.time.value = time;
 }
 
