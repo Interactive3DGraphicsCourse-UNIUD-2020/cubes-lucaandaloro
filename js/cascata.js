@@ -1,6 +1,5 @@
+// --------------- FUNZIONE PER LA CREAZIONE DELLA CASCATA -----------
 
-
-//Crea il corretto cubo in base all'altezza
 function creaCascata() {
     
     var geometryCube = new THREE.BufferGeometry().fromGeometry(new THREE.BoxGeometry(1,1,1));
@@ -8,26 +7,6 @@ function creaCascata() {
      cascata2 = [];
      grotta = [];
     var p = true;
-    /*
-    for(var i =0; i<15;i++){
-        var cuboGrotta = geometryCube.clone();
-        var cuboGrotta2 = geometryCube.clone();
-        if(i<2){
-            cuboGrotta.applyMatrix(new THREE.Matrix4().makeTranslation(-17,16+i,3));
-            cuboGrotta2.applyMatrix(new THREE.Matrix4().makeTranslation(-16,16+i,3));
-        }else if(i<10){
-            cuboGrotta.applyMatrix(new THREE.Matrix4().makeTranslation(-17,19,3+i-3));
-            cuboGrotta2.applyMatrix(new THREE.Matrix4().makeTranslation(-16,19,3+i-3));
-        }else if(i<14){
-            cuboGrotta.applyMatrix(new THREE.Matrix4().makeTranslation(-17,19-i+10,9));
-            cuboGrotta2.applyMatrix(new THREE.Matrix4().makeTranslation(-16,19-i+10,9));
-        }
-        
-        grotta.push(cuboGrotta);
-        grotta.push(cuboGrotta2);
-    }
-    
-    */
     for(var i=0; i<13; i++){
         for(var j = 0; j<5; j++){
             if(i<4){
@@ -66,12 +45,8 @@ function creaCascata() {
     }
     var  cascataCubes =  THREE.BufferGeometryUtils.mergeBufferGeometries(cascata);
     var  cascataCubes2 =  THREE.BufferGeometryUtils.mergeBufferGeometries(cascata2);
-    //var  grottaCubes =  THREE.BufferGeometryUtils.mergeBufferGeometries(grotta);
     meshCascata = new THREE.Mesh(cascataCubes, getMateriale("water"));
     meshCascata2 = new THREE.Mesh(cascataCubes2, getMateriale("water"));
-    //meshGrotta = new THREE.Mesh(grottaCubes, getMateriale("terrain"));
     scene.add(meshCascata);
-    scene.add(meshCascata2);
-    //scene.add(meshGrotta);
-    
+    scene.add(meshCascata2);  
 }
