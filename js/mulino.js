@@ -1,3 +1,5 @@
+// --------------- FUNZIONE PER LA CREAZIONE DEL MULINO -----------
+
 function creaMulino(){
 	var muri = new THREE.Object3D();
     var mulino = new THREE.Object3D();
@@ -16,18 +18,16 @@ function creaMulino(){
     //tetto
     
     var geometria = new THREE.BoxGeometry(0.5,5,5);
-	//var material = new THREE.MeshPhongMaterial({ map: texture });
+
 	var meshTetto = new THREE.Mesh(geometria, getMateriale("mulino"));
 	meshTetto.rotation.z += 60 * Math.PI/180;
-	//mesh.rotation.y += 45 * Math.PI/180;
 	meshTetto.position.x += -5;
 	meshTetto.position.y += 10;
     meshTetto.position.z += -1.34; 
     mulino.add(meshTetto);
-	//var material = new THREE.MeshPhongMaterial({ map: texture });
+	
 	var meshTetto2 = new THREE.Mesh(geometria, getMateriale("mulino"));
 	meshTetto2.rotation.z += -60 * Math.PI/180;
-	//mesh.rotation.y += 45 * Math.PI/180;
 	meshTetto2.position.x += -8;
 	meshTetto2.position.y += 10;
     meshTetto2.position.z += -1.34; 
@@ -126,7 +126,7 @@ function creaMulino(){
         mulino.add(palaMeshs[i]);
     }
     
-    //mulino.position.set(10, 10, 1);
+  
 	
     scene.add(mulino);
     
@@ -135,7 +135,7 @@ function creaMulino(){
 function creaParete(w, h, d, rotationZ, rotationY, traslationX, traslationY, traslationZ, texture){
 
 	var geometria = new THREE.BoxGeometry(w,h,d);
-	//var material = new THREE.MeshPhongMaterial({ map: texture });
+	
 	var mesh = new THREE.Mesh(geometria, getMateriale("mulino"));
 	mesh.rotation.z += rotationZ * Math.PI/180;
 	mesh.rotation.y += rotationY * Math.PI/180;
