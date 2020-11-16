@@ -28,7 +28,7 @@ Il terreno è stato generato tramite la seguente Heightmaps:<br />
 La foto è stata ritoccata con photoshop per aggiustare la tonalità in alcuni parti (es. la zona dove è stat posizionato il mulino).
 Nelle prima fasi si sono prese in considerazioni diverse opzioni per il posizionamento dei cubi in particolare: 
 1. Mantenere una solo fila di cubi (PROBLEMA: con dislivelli ampi si creavano troppi spazi vuoti);
-2. Creare cubi allungati (Funzionale non bello esteticamente)
+2. Creare cubi allungati (Funzionale non bella esteticamente)
 3. Posizionare tanti cubi sovrapposti (PROBLEMA: Il progetto risultava molto pesante e lento, vedere: [Ottimizzazione](https://github.com/Interactive3DGraphicsCourse-UNIUD-2020/cubes-lucaandaloro/tree/sviluppo#ottimizzazione) ). <br />
 
 E' stata scelta la terza opzione perchè (come già detto) esteticamente la migliore per gestire diversi strati di materiale. In fine è stato studiato un modo per assegnare in base all'altezza e alla posizione il materiale al singolo cubetto.
@@ -73,5 +73,5 @@ Il progetto potrebbe essere ampliato aggiungendo molte nuove animazioni, come l'
   - Portatile: MacBook Pro (15-inch, 2018)
   - CPU: 2,6 GHz Intel Core i7 6 core
   - Scheda grafica: Radeon Pro 560X 4 GB / Intel UHD Graphics 630 1536 MB
-  - RAM: 6 GB 2400 MHz DDR4
+  - RAM: 16 GB 2400 MHz DDR4
 
