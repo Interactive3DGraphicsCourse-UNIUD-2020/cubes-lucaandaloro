@@ -16,7 +16,7 @@ Inizialmente è stato costruito il terreno con una heightmap (spiegherò nel det
 ![Immagine cascata](immagini/cascata.png)
 - Ponte: E' composto da parallelepipedi con angolazioni diverse così da formare un arco.<br />
 ![Immagine cascata](immagini/ponte.png)
-- Alberi: Compositi da un tronco e box sovrapposti per simulare l'aspetto di un pino.<br />
+- Alberi: Compositi da un tronco e box sovrapposti per simulare l'aspetto di un pino. Vengono aggiunti in modo automatico solo sulla superficie che corrisponde al prato, tenendo conto della distanza tra loro e il numero massimo<br />
 ![Immagine cascata](immagini/albero.png)
 - Nuvole: Sono state ideate per essere tutte diverse tra loro, composte da diversi cubi.<br />
 ![Immagine cascata](immagini/nuvole.png)
