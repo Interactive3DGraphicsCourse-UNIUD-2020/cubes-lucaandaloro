@@ -100,7 +100,7 @@ function getMateriale(materiale){
 function textureLoader( file ){
     var tl = new THREE.TextureLoader();
     var newTex = tl.load( file );
-    newTex.magFilter = THREE.NearestFilter; // for lowres textures
+    newTex.magFilter = THREE.NearestFilter; 
     return newTex;
 }
 
