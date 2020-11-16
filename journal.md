@@ -70,3 +70,7 @@
 - Aggiunta commenti nel codice
 - Perfezionamento delle luci
 - Creazione file `readme.md`
+
+### 16 Novembre 2020 
+- Correzione ultimi errori
+- Commit finale sul branch `Master`
