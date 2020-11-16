@@ -3,12 +3,12 @@
 function creaPonte(){
 	var ponte = new THREE.Object3D();
 
-	//pavimento
+
 	var x = -3;
 	var y = 7;
 	var z = 28;
-	var geometriaBlocco = new THREE.BoxGeometry(3,0.6,2);
-	var meshPavimento = new THREE.Mesh(geometriaBlocco, getMateriale("mulino"));	
+	var geometry = new THREE.BoxGeometry(3,0.6,2);
+	var meshPavimento = new THREE.Mesh(geometry, getMateriale("mulino"));	
 	for(var i = 0; i < 12; i++){
 		var salita = meshPavimento.clone();
 		if(i<2){
