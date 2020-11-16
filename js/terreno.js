@@ -1,6 +1,4 @@
 
-
-
 // --------------- FUNZIONI PER LA CREAZIONE DEL TERRENO -----------
 
 var height, width;
@@ -48,7 +46,7 @@ var contatorePini = 0;
 var distanza = 0;
 
 
-//Crea il corretto cubo in base all'altezza e viene inserito con l'array corrispondende
+//Crea il corretto cubo in base all'altezza e viene inserito nell'array corrispondende
 function creazioneCubo(i, j, posizione, ultimo, width, height) {
     var geometry = new THREE.BufferGeometry().fromGeometry(new THREE.BoxGeometry(1,1,1));
     
@@ -92,6 +90,7 @@ function creazioneTerreno(data, width, height) {
             creazioneCubo(i, j, data[i],data[i]/2, width, height);
         }
     }
+    // Effettua il merge dei singoli cubi
     var  sandCubes  =  THREE.BufferGeometryUtils.mergeBufferGeometries(sands);
     var  blackWaterCubes  =  THREE.BufferGeometryUtils.mergeBufferGeometries(black_waters);
     var  watersCubes =  THREE.BufferGeometryUtils.mergeBufferGeometries(waters);
@@ -99,7 +98,7 @@ function creazioneTerreno(data, width, height) {
     var  terrainsCubes  =  THREE.BufferGeometryUtils.mergeBufferGeometries(terrains);
     var  montainCubes  =  THREE.BufferGeometryUtils.mergeBufferGeometries(stones);
 
-    // ora abbiamo 1 mega mesh grande con 10 000 cubi al suo interno
+    // Creo la mesh di tutti i cubi 
     var meshSand = new THREE.Mesh(sandCubes, getMateriale("sand"));
     var meshBlackWaters = new THREE.Mesh(blackWaterCubes, getMateriale("black_water"));
     meshWaters = new THREE.Mesh(watersCubes, getMateriale("water"));
