@@ -14,8 +14,14 @@
 			width: 100%; 
 			height: 80%;
 		}
+		#bottoni{
+			position: absolute;
+			top: 60px;
+			left: 20px;
+  		}
 	
 	</style>
+	 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script src="lib/three.min.js"></script>
 		<script src="lib/BufferGeometryUtils.js"></script>
 		<script src="lib/stats.min.js"></script>
@@ -30,9 +36,20 @@
 		<script src="js/cascata.js"></script>
 	</head>
 	<body>
+		<div id="bottoni">
+            <p>Posiziona la camera su:</p>
+            <button id="mulino">Mulino</button>
+            <button id="ponte">Ponte</button>
+            <button id="cascata">Cascata</button>
+            <button id="albero">Albero</button>
+        </div>
 		<script>
 		
 		var scene, camera, renderer, controls, stats, sole;
+		var mulino = false;
+        var cascata = false;
+        var ponte = false;
+        var albero = false;
 		
 		function Start() {
 			scene = new THREE.Scene();
@@ -111,12 +128,50 @@
 		function Animazioni() {
 			animazioneMulino();
 			animazioneNuvole();
+			animazioneCamera();
+		}
+
+		function animazioneCamera(){
+			if(mulino == true){
+                camera.lookAt( new THREE.Vector3(0,0,0));
+                camera.position.set(-15, 12, -7 );
+                
+                mulino = false;
+            }
+            if(cascata == true){
+                camera.lookAt( new THREE.Vector3(0,0,0));
+                camera.position.set(-50, 20, -7 );
+                cascata = false;
+            }
+            if(albero == true){
+                camera.lookAt( new THREE.Vector3(0,0,0));
+                camera.position.set(30, 16, -40);
+                albero = false;
+            }
+            if(ponte == true){
+                camera.lookAt(new THREE.Vector3(-100, 0, 0));
+				camera.position.set(18, 18, 25 );
+				
+                ponte = false;
+            }
 		}
 		
 		
 		Start();
 		Update();
-			
+
+		$("#mulino").on("click", function(){
+            mulino = true;
+            });
+        $("#cascata").on("click", function(){
+            cascata = true;
+            });
+        $("#ponte").on("click", function(){
+            ponte = true;
+		 });
+		 $("#albero").on("click", function(){
+            albero = true;
+         });
 		</script>
 		
 	</body>
