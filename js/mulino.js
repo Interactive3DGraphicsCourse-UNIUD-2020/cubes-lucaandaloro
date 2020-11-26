@@ -43,8 +43,8 @@ function creaMulino(){
     meshPerno.position.z += -4.5;
     mulino.add(meshPerno);
     var geometry = new THREE.TorusGeometry( 3, 0.25, 6, 100 );
-    var torus = new THREE.Mesh(geometry, getMateriale("mulinoPali") );
-    var torus2 = new THREE.Mesh(geometry, getMateriale("mulinoPali"));
+     torus = new THREE.Mesh(geometry, getMateriale("mulinoPali") );
+    torus2 = new THREE.Mesh(geometry, getMateriale("mulinoPali"));
     torus.position.x += -7.1;
     torus.position.y += 7.5;
     torus.position.z += -4.5;
@@ -151,4 +151,6 @@ function animazioneMulino(){
         paliMeshs[i].rotation.y -= 0.005 ;
         paliMeshs2[i].rotation.y -= 0.005 ;
     }
+    torus.rotation.z -=0.005;
+    torus2.rotation.z -=0.005;
 }
