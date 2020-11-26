@@ -34,8 +34,8 @@ function creaMulino(){
     mulino.add(meshTetto2);
 
     
-    //mulino
-    var geometriaPerno = new THREE.CylinderGeometry( 0.3, 0.3, 4, 32 );
+    // Mulino
+    var geometriaPerno = new THREE.CylinderGeometry(0.3, 0.3, 4, 32);
     var meshPerno = new THREE.Mesh(geometriaPerno, getMateriale("terrain"));
     meshPerno.rotation.x = 90 * Math.PI/180;
     meshPerno.position.x += -7.1;
@@ -57,23 +57,23 @@ function creaMulino(){
      //Pali1
             
      var paliGeom = new THREE.BoxGeometry(5.5,0.2,0.2);
-     let radiusr = 3;
+     var radiusr = 3;
     
      // Cambio il pivot così da generare la pala intorno
      paliGeom.translate(0, 0, -5);
      paliGeom.rotateX(Math.PI / 2);
-     let paliMesh = new THREE.Mesh(paliGeom, getMateriale("mulinoPali"));
+     var paliMesh = new THREE.Mesh(paliGeom, getMateriale("mulinoPali"));
      paliMesh.rotation.x = 90 * Math.PI/180;
      paliMesh.rotation.y = 90 * Math.PI/180;
      paliMesh.position.x += -7.1;
      paliMesh.position.y += 7.8;
      paliMesh.position.z += -9.5;
-     let paliCount = 10;
-     let rotationStepPali = Math.PI * 2 / paliCount;
+     var paliCount = 10;
+     var rotationStepPali = Math.PI * 2 / paliCount;
      
      paliMeshs = [];
      
-     for (let i = 0; i < paliCount; i ++) {
+     for (var i = 0; i < paliCount; i ++) {
         paliMeshs[i] = paliMesh.clone();
         paliMeshs[i].rotation.y = rotationStepPali * i;
         
@@ -84,7 +84,7 @@ function creaMulino(){
 
     
      
-     let paliMesh2 = new THREE.Mesh(paliGeom, getMateriale("mulinoPali"));
+     var paliMesh2 = new THREE.Mesh(paliGeom, getMateriale("mulinoPali"));
      paliMesh2.rotation.x = 90 * Math.PI/180;
      paliMesh2.rotation.y = 90 * Math.PI/180;
      paliMesh2.position.x += -7.1;
@@ -93,7 +93,7 @@ function creaMulino(){
 
      paliMeshs2 = [];
      
-     for (let i = 0; i < paliCount; i ++) {
+     for (var i = 0; i < paliCount; i ++) {
         paliMeshs2[i] = paliMesh2.clone();
         paliMeshs2[i].rotation.y = rotationStepPali * i;
         
@@ -104,23 +104,23 @@ function creaMulino(){
     //Pale
             
     var palaGeom = new THREE.BoxGeometry(0.7,0.2,1.7);
-    let radius = 3;
+    var radius = 3;
    
     // Cambio il pivot così da generare la pala intorno
     palaGeom.translate(0, -radius, -5);
     palaGeom.rotateX(Math.PI / 2);
-    let palaMesh = new THREE.Mesh(palaGeom, getMateriale("mulino"));
+    var palaMesh = new THREE.Mesh(palaGeom, getMateriale("mulino"));
     palaMesh.rotation.x = 90 * Math.PI/180;
     palaMesh.rotation.y = 90 * Math.PI/180;
     palaMesh.position.x += -7.1;
     palaMesh.position.y += 7.5;
     palaMesh.position.z += -10.5;
-    let palaCount = 10;
-    let rotationStep = Math.PI * 2 / palaCount;
+    var palaCount = 10;
+    var rotationStep = Math.PI * 2 / palaCount;
     
     palaMeshs = [];
     
-    for (let i = 0; i < palaCount; i ++) {
+    for (var i = 0; i < palaCount; i ++) {
         palaMeshs[i] = palaMesh.clone();
         palaMeshs[i].rotation.y = rotationStep * i;
         mulino.add(palaMeshs[i]);
@@ -132,7 +132,7 @@ function creaMulino(){
     
 }
 
-function creaParete(w, h, d, rotationZ, rotationY, traslationX, traslationY, traslationZ, texture){
+function creaParete(w, h, d, rotationZ, rotationY, traslationX, traslationY, traslationZ){
 
 	var geometria = new THREE.BoxGeometry(w,h,d);
 	
@@ -146,7 +146,7 @@ function creaParete(w, h, d, rotationZ, rotationY, traslationX, traslationY, tra
 }
 
 function animazioneMulino(){
-    for (let i = 0; i < 10; i ++) {
+    for (var i = 0; i < 10; i ++) {
         palaMeshs[i].rotation.y -= 0.005 ;
         paliMeshs[i].rotation.y -= 0.005 ;
         paliMeshs2[i].rotation.y -= 0.005 ;
